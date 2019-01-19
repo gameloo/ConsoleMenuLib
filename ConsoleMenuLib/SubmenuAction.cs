@@ -21,7 +21,19 @@ namespace ConsoleMenuLib
                 else throw new ArgumentNullException();
             }
         }
-        public Stack<IMenu> NavigationHistory { get; set; }
+
+        private Stack<IMenu> navigationHistory;
+        public Stack<IMenu> NavigationHistory
+        {
+            get { return navigationHistory; }
+            set { navigationHistory = value ?? throw new ArgumentNullException(); }
+            //set
+            //{
+            //    if (value != null) navigationHistory = value;
+            //    else throw new ArgumentNullException();
+            //}
+
+        }
         private readonly Action action;
 
         /// <param name="action">Делегат</param>
