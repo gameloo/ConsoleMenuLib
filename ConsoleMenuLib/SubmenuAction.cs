@@ -11,15 +11,8 @@ namespace ConsoleMenuLib
         private string description;
         public string Headline
         {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                if (value != null) description = value;
-                else throw new ArgumentNullException();
-            }
+            get { return description; }
+            set { description = value ?? throw new ArgumentNullException(); }
         }
 
         private Stack<IMenu> navigationHistory;
@@ -27,12 +20,6 @@ namespace ConsoleMenuLib
         {
             get { return navigationHistory; }
             set { navigationHistory = value ?? throw new ArgumentNullException(); }
-            //set
-            //{
-            //    if (value != null) navigationHistory = value;
-            //    else throw new ArgumentNullException();
-            //}
-
         }
         private readonly Action action;
 

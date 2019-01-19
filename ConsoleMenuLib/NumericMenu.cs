@@ -12,13 +12,14 @@ namespace ConsoleMenuLib
         public string Headline
         {
             get { return description; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException();
-                else description = value;
-            }
+            set { description = value ?? throw new ArgumentNullException(); }
         }
-        public Stack<IMenu> NavigationHistory { get; set; }
+        private Stack<IMenu> navigationHistory;
+        public Stack<IMenu> NavigationHistory
+        {
+            get { return navigationHistory; }
+            set { navigationHistory = value ?? throw new ArgumentNullException(); }
+        }
         private Dictionary<int, IMenu> submenus;
 
         /// <param name="headline">Заголовок меню</param>
