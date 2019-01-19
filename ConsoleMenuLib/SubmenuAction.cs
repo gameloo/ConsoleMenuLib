@@ -27,7 +27,7 @@ namespace ConsoleMenuLib
         /// <param name="desctription">Описание</param>
         public SubmenuAction(Action action, string desctription)
         {
-            this.action = action;
+            this.action = action ?? throw new ArgumentNullException();
             Headline = desctription;
         }
 
