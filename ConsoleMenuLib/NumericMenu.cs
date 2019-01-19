@@ -27,10 +27,7 @@ namespace ConsoleMenuLib
         {
             Headline = headline;
             submenus = new Dictionary<int, IMenu>();
-            if (NavigationHistory == null)
-            {
-                NavigationHistory = new Stack<IMenu>();
-            }
+            NavigationHistory = new Stack<IMenu>();
         }
 
         /// <summary>
